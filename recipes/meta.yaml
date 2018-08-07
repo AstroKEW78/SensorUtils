@@ -1,0 +1,22 @@
+package:
+  name: sensorutils
+  version: "1.0.1"
+
+source:
+  git_url: https://github.com/USGS-Astrogeology/SensorUtils.git
+
+requirements:
+  build:
+    - cmake >=3.10
+  run:
+    - armadillo
+
+test:
+  commands:
+    - test -e ${CMAKE_INSTALL_INCLUDEDIR}/include/sensorutils/SensorUtils.h
+    - test -e ${CMAKE_INSTALL_LIBDIR}/lib/libsensorutils.so
+
+about:
+  home: https://github.com/USGS-Astrogeology/SensorUtils
+  license: None
+  summary: "This is a library for sensor utilities"

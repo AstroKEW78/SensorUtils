@@ -20,7 +20,7 @@ endif()
 set_target_properties(sensorutils PROPERTIES
     VERSION ${PROJECT_VERSION}
     SOVERSION 1
-    PUBLIC_HEADER SensorUtils.h
+    PUBLIC_HEADER ${PROJECT_SOURCE_DIR}/include/sensorutils/SensorUtils.h
 )
 
 find_package(Threads)
@@ -30,7 +30,7 @@ find_package(Armadillo REQUIRED)
 
 target_include_directories(sensorutils
                            PUBLIC
-                           include/sensorutils
+                           include/sensorutils/
                            include/
                            ${ARMADILLO_INCLUDE_DIRS}
 )
@@ -42,7 +42,7 @@ target_link_libraries(sensorutils PUBLIC
 
 install(TARGETS sensorutils
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/sensorutils)
 
 
 
